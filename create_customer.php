@@ -17,13 +17,7 @@ $Betaald = empty($_POST["Betaald"]) ? null : htmlspecialchars($_POST["Betaald"])
 
 
 if ($Contributies && $Verhogingcontributies && $Extratraning && $Voornaam && $Achternaam && $Postadres && $Huisnummer && $Postcode && $Plaats && $Telefoonnummer && $Email && $Leeftijdsgroep && $Geboortedatum && $Betaald) {
-    $host = 'localhost';
-    $dbname = 'FCA';
-    $username = 'root';
-    $password = 'Root';
-
-$connectStr = 'mysql:host=' . $host . ';dbname=' . $dbname . ';charset=utf8';
-$db = new PDO($connectStr, $username, $password);
+include 'templates/Connect.php';
 
     $sql = "INSERT INTO Customer (Contributies, Verhogingcontributies, Extratraining, Voornaam, Achternaam, Postadres, Huisnummer, Postcode, Plaats, Telefoonnummer, Email, Leeftijdsgroep, Geboortedatum, Betaald) VALUES (:Contributies, :Verhogingcontributies, :Extratraining, :Voornaam, :Achternaam, :Postadres, :Huisnummer, :Postcode, :Plaats, :Telefoonnummer, :Email, :Leeftijdsgroep, :Geboortedatum, :Betaald)";
     $params = array(":Contributies" => "$Contributies", ":Verhogingcontributies" => "$Verhogingcontributies", ":Extratraining" => "$Extratraining", ":Voornaam" => "$Voornaam", ":Achternaam" => "$Achternaam", ":Postadres" => "$Postadres", ":Huisnummer" => "$Huisnummer", ":Postcode" => "$Postcode", ":Plaats" => "$Plaats", ":Telefoonnummer" => "$Telefoonnummer", ":Email" => "$Email", ":Leeftijdsgroep" => "$leeftijdsgroep", ":Geboortedatum" => "$Geboortedatum");
