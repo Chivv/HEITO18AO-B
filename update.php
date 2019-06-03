@@ -1,3 +1,4 @@
+include 'scripts/connectdb.php';
 $Contributies = empty($_POST["Contributies"]) ? null : htmlspecialchars($_POST["Contributies"]);
 $Verhogingcontributies = empty($_POST["Verhogingcontributies"]) ? null : htmlspecialchars($_POST["Verhogingcontributies"]);
 $Extratraining = empty($_POST["Extratraining"]) ? null : htmlspecialchars($_POST["Extratraining"]);
